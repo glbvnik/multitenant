@@ -1,17 +1,30 @@
 import Image from 'next/image'
+import fs from "fs";
 
-const Page = ({params}: { params: { domain: string } }) => {
+export function generateStaticParams() {
+    const data = fs.readFileSync(`${process.cwd()}/domains.txt`, 'utf8')
+
+    return data.split(', ').map(domain => ({domain}))
+}
+
+const Page = async ({params}: { params: { domain: string } }) => {
     const randomNum = Math.random()
+
+    const res = await fetch('https://www.uuidtools.com/api/generate/v1', {next: {revalidate: 10}})
+
+    const data = (await res.json())[0]
 
     return (
         <div>
             <div style={{
                 display: 'flex',
+                flexDirection: 'column',
                 justifyContent: 'center',
                 fontSize: 32,
                 paddingTop: 120
             }}>
-                Random number: {randomNum}
+                <div>Random number: {randomNum}</div>
+                <div>Data: {data}</div>
             </div>
             <div style={{display: 'flex', paddingTop: 120}}>
                 <Image
