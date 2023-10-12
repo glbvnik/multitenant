@@ -7,14 +7,13 @@ import {addListeners, registerNotifications} from "../../../notifications";
 const Notifications = () => {
     useEffect(() => {
         if (Capacitor.getPlatform() !== 'web') {
-            registerNotifications().then(() => {
-                addListeners()
-            })
+            registerNotifications()
+            addListeners()
         }
     }, [])
 
     return (
-        <div>Some client component</div>
+        <div>Some client component...</div>
     )
 }
 

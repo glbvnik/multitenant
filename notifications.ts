@@ -3,7 +3,7 @@ import Router from 'next/router'
 
 export const addListeners = async () => {
     await PushNotifications.addListener('registration', token => {
-        console.info('Registration token: ', token.value);
+        console.log('Registration token: ', token.value);
     });
 
     await PushNotifications.addListener('registrationError', err => {
