@@ -19,6 +19,9 @@ export const addListeners = async () => {
 
         const data = notification.notification.data
 
+        console.log('Data', data)
+        console.log('Details:', data.detailsId)
+
         if (data.detailsId) {
             Router.push('/data')
         }
