@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import fs from 'fs'
 import {notFound} from 'next/navigation'
+import Notifications from "@/app/[domain]/Notifications";
 
 export function generateStaticParams() {
     const data = fs.readFileSync(`${process.cwd()}/domains.txt`, 'utf8')
@@ -41,6 +42,7 @@ const Page = ({params}: { params: { domain: string } }) => {
                     <button style={{width: 200, padding: '12px 0'}}>Fetch data page</button>
                 </Link>
             </div>
+            <Notifications />
         </div>
     )
 }

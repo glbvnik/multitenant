@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "946158039420",
+    "project_id": "multitenant-test-c2b37",
+    "storage_bucket": "multitenant-test-c2b37.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:946158039420:android:bc3e0b6face971f2e7b4f9",
+        "android_client_info": {
+          "package_name": "fun.tenantcustom.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1kXTrnaKNeKyWXRjJhbM-gRLGOT3NbdQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

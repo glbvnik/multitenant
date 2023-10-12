@@ -1,0 +1,7 @@
+{
+  "appId": "fun.tenantcustom.app",
+  "appName": "Custom",
+  "server": {
+    "url": "https://tenantcustom.fun/"
+  }
+}
