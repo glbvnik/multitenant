@@ -23,6 +23,7 @@ export const addListeners = async () => {
         console.log('Details:', data.detailsId)
 
         if (data.detailsId) {
+            console.log('Router:', Router)
             Router.push('/data')
         }
     });
