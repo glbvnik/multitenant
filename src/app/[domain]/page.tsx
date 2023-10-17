@@ -11,7 +11,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({params}: { params: { domain: string } }) {
     return {
-        manifest: `http://${params.domain}/static/manifest.webmanifest`,
+        manifest: `https://${params.domain}/static/manifest.webmanifest`,
     }
 }
 
