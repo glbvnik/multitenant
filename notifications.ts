@@ -2,16 +2,28 @@ import {PushNotifications} from '@capacitor/push-notifications';
 import Router from 'next/router'
 
 export const addListeners = async () => {
-    await PushNotifications.addListener('registration', token => {
+    await PushNotifications.addListener('registration', async token => {
         console.log('Registration token: ', token.value);
+
+        await PushNotifications.createChannel({
+            id: 'high_importance_channel',
+            name: 'High Importance Channel',
+            importance: 4,
+        })
     });
 
     await PushNotifications.addListener('registrationError', err => {
         console.error('Registration error: ', err.error);
     });
 
-    await PushNotifications.addListener('pushNotificationReceived', notification => {
+    await PushNotifications.addListener('pushNotificationReceived', async notification => {
         console.log('Push notification received: ', notification);
+
+        await PushNotifications.createChannel({
+            id: 'high_importance_channel',
+            name: 'High Importance Channel',
+            importance: 4,
+        })
     });
 
     await PushNotifications.addListener('pushNotificationActionPerformed', notification => {

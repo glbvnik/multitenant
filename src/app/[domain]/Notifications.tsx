@@ -6,10 +6,12 @@ import {addListeners, registerNotifications} from "../../../notifications";
 
 const Notifications = () => {
     useEffect(() => {
-        if (Capacitor.getPlatform() !== 'web') {
-            registerNotifications()
-            addListeners()
-        }
+        (async () => {
+            if (Capacitor.getPlatform() !== 'web') {
+                await registerNotifications()
+                await addListeners()
+            }
+        })()
     }, [])
 
     return (
